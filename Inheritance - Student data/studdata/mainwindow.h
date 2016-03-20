@@ -25,6 +25,8 @@ private slots:
 
     void on_display_clicked();
 
+    void on_clear_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
