@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-int srch;
+int srch=-1;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -105,13 +105,15 @@ void MainWindow::on_search_clicked()
         if(searchno==stud[i]->rno)
         {
             QMessageBox::information(this,"Found","Record found successfully");
+            srch = i;
+            break;
         }
         else
         {
             QMessageBox::information(this,"Error","Data not found");
         }
     }
-    srch = i;
+
 
 
 }
@@ -181,4 +183,26 @@ void MainWindow::on_save_clicked()
 void MainWindow::on_exit_clicked()
 {
     this->close();
+}
+
+void MainWindow::on_del_clicked()
+{
+    on_search_clicked();
+    if(srch<0 || srch>datamg::totalno)
+    {
+        QMessageBox::information(this,"Error","Data not found");
+    }
+    else
+    {
+        int i;
+        for(i=srch;i<datamg::totalno;i++)
+        {
+            stud[i] = stud[i+1];
+        }
+        delete stud[i];
+        datamg::totalno--;
+
+
+    }
+
 }
