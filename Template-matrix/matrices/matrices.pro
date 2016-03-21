@@ -11,7 +11,8 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    matrices.cpp
 
 HEADERS  += mainwindow.h \
     matrices.h

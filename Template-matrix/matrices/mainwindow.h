@@ -39,6 +39,10 @@ private slots:
 
     void on_float_2_clicked();
 
+    void on_transa_clicked();
+
+    void on_transb_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

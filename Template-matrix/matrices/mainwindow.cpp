@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "matrices.cpp"
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -11,6 +11,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mul->setDisabled(1);
     ui->add->setDisabled(1);
     ui->sub->setDisabled(1);
+    ui->transa->setDisabled(1);
+    ui->transb->setDisabled(1);
 }
 
 MainWindow::~MainWindow()
@@ -22,17 +24,6 @@ void MainWindow::on_exit_clicked()
 {
     this->close();
 }
-
-//matrix <T> matrix::add(matrix<T> b)
-//{
-//    matrix <T> temp;
-//    for(int i=0;i<MAX;i++){
-//        for(int j=0;j<MAX;j++){
-//            temp.mat[i][j] = mat[i][j] + b.mat[i][j];
-//        }
-//    }
-
-//}
 
 void MainWindow::on_clear_clicked()
 {
@@ -64,7 +55,7 @@ void MainWindow::on_disp_clicked()
     {
         for(int i=0;i<MAX;i++){
             for(int j=0;j<MAX;j++){
-                ui->result->setItem(i,j,new QTableWidgetItem(QString::number(z.mat[i][j],10.2)));
+                ui->result->setItem(i,j,new QTableWidgetItem(QString::number(z.mat[i][j],10,2)));
             }
         }
 
@@ -76,6 +67,10 @@ void MainWindow::on_accept_clicked()
     ui->add->setEnabled(1);
     ui->sub->setEnabled(1);
     ui->mul->setEnabled(1);
+    ui->transa->setEnabled(1);
+    ui->transb->setEnabled(1);
+    ui->disp->setEnabled(1);
+
     if(ui->int_2->isChecked()){
         for(int i=0;i<MAX;i++){
             for(int j=0;j<MAX;j++){
@@ -129,4 +124,26 @@ void MainWindow::on_int_2_clicked()
 void MainWindow::on_float_2_clicked()
 {
     ui->accept->setEnabled(1);
+}
+
+void MainWindow::on_transa_clicked()
+{
+    if(ui->int_2->isChecked()){
+        n = l.transpose();
+    }
+    else
+    {
+        z = x.transpose();
+    }
+}
+
+void MainWindow::on_transb_clicked()
+{
+    if(ui->int_2->isChecked()){
+        n = m.transpose();
+    }
+    else
+    {
+        z = y.transpose();
+    }
 }

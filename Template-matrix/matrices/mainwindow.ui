@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>709</width>
-    <height>529</height>
+    <height>495</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -182,7 +182,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>270</y>
+      <y>250</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -195,7 +195,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>320</y>
+      <y>290</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -208,7 +208,7 @@
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>370</y>
+      <y>330</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -221,7 +221,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>320</y>
+      <y>290</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -234,7 +234,7 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>270</y>
+      <y>250</y>
       <width>98</width>
       <height>27</height>
      </rect>
@@ -247,13 +247,39 @@
     <property name="geometry">
      <rect>
       <x>160</x>
-      <y>370</y>
+      <y>380</y>
       <width>98</width>
       <height>27</height>
      </rect>
     </property>
     <property name="text">
      <string>Exit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="transa">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>330</y>
+      <width>98</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Transpose A</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="transb">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>370</y>
+      <width>98</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Transpose B</string>
     </property>
    </widget>
   </widget>
